@@ -104,6 +104,7 @@ Conversor.prototype.convert = function(e) {
  * @returns void
  */
 Conversor.prototype.copyToClipboard = function(target) {
+    if (!target.value) return;
     target.select();
     document.execCommand('copy');
 };
