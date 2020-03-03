@@ -1,10 +1,11 @@
 {
-  "name": "binary-2-text-2-binary",
+  "name": "@diogocercilio/binary-2-text-2-binary",
   "version": "1.0.0",
   "description": "A Binary / Text / Binary Converter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack",
+    "dev": "webpack -w"
   },
   "keywords": [
     "binary",
@@ -14,5 +15,18 @@
     "text"
   ],
   "author": "Diogo Cercilio",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiogoCercilio/binary-2-text-2-binary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DiogoCercilio/binary-2-text-2-binary/issues"
+  },
+  "homepage": "https://github.com/DiogoCercilio/binary-2-text-2-binary#readme"
 }
