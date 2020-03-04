@@ -1,6 +1,14 @@
 # binary-2-text-2-binary
 A Binary / Text / Binary Converter
 
+Get on NPM:
+
+https://www.npmjs.com/package/@diogocercilio/binary-2-text-2-binary
+
+See in action:
+
+http://diogocercilio.github.io/binary-converter/index.html
+
 How to use:
 
 ```javascript
