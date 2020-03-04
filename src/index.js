@@ -1,7 +1,7 @@
 import Helpers from './Helpers'
 import {ERROR} from './messages'
 
-export default function Conversor(config={}) {
+export default function Binary2Text2Binary(config={}) {
     
     if (!config.inputBin) throw config.empty_input_bin || ERROR.EMPTY_INPUT_BIN
     if (!config.inputText) throw config.empty_input_text || ERROR.EMPTY_INPUT_TEXT
@@ -31,7 +31,7 @@ export default function Conversor(config={}) {
  * @description Converts given text to binary
  * @returns void
  */
-Conversor.prototype.convertTextToBinary = function(e) {
+Binary2Text2Binary.prototype.convertTextToBinary = function(e) {
     this.inputBin.value = (typeof e.target.value === "string") ? 
         Helpers.convertStringToBinary(e.target.value) : 
         Helpers.convertNumberToBinary(e.target.value);
@@ -42,7 +42,7 @@ Conversor.prototype.convertTextToBinary = function(e) {
  * @description Check if trigger key is valid, before convert
  * @returns Boolean
  */
-Conversor.prototype.isInValidTrigger = function(e) {
+Binary2Text2Binary.prototype.isInValidTrigger = function(e) {
     return e.ctrlKey || e.altKey || e.which === 9;
 }
 
@@ -51,7 +51,7 @@ Conversor.prototype.isInValidTrigger = function(e) {
  * @description Converts given binary to text
  * @returns void
  */
-Conversor.prototype.convertBinaryToText = function(e) {
+Binary2Text2Binary.prototype.convertBinaryToText = function(e) {
     if (!Helpers.isValidBinary(e)) {
         this.error(this.config.invalid_binary || ERROR.INVALID_BINARY, e);
         return;
@@ -64,7 +64,7 @@ Conversor.prototype.convertBinaryToText = function(e) {
  * @description Reset given input
  * @returns void
  */
-Conversor.prototype.reset = function(e) {
+Binary2Text2Binary.prototype.reset = function(e) {
     e.target.value = "";
 };
 
@@ -74,7 +74,7 @@ Conversor.prototype.reset = function(e) {
  * @description Show a message for the user, and reset the field 
  * @returns void
  */
-Conversor.prototype.error = function(msg, element) {
+Binary2Text2Binary.prototype.error = function(msg, element) {
     this.showMessage(msg);
     this.reset(element);
 };
@@ -84,7 +84,7 @@ Conversor.prototype.error = function(msg, element) {
  * @description Show a message for the user (A simple alert)
  * @returns void
  */
-Conversor.prototype.showMessage = function(msg) {
+Binary2Text2Binary.prototype.showMessage = function(msg) {
     alert(msg);
 };
 
@@ -93,7 +93,7 @@ Conversor.prototype.showMessage = function(msg) {
  * @description Do the conversion
  * @returns void
  */
-Conversor.prototype.convert = function(e) {
+Binary2Text2Binary.prototype.convert = function(e) {
     if (this.isInValidTrigger(e)) return;
     return (e.target === this.inputBin) ? this.convertBinaryToText(e) : this.convertTextToBinary(e);
 };
@@ -103,7 +103,7 @@ Conversor.prototype.convert = function(e) {
  * @description Copy to clipboard
  * @returns void
  */
-Conversor.prototype.copyToClipboard = function(target) {
+Binary2Text2Binary.prototype.copyToClipboard = function(target) {
     if (!target.value) return;
     target.select();
     document.execCommand('copy');
