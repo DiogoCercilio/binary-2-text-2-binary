@@ -1,10 +1,10 @@
 {
   "name": "@diogocercilio/binary-2-text-2-binary",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Binary / Text / Binary Converter",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "webpack && jest",
     "start": "webpack",
     "dev": "webpack -w"
   },

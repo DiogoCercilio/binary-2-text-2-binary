@@ -5,6 +5,6 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'conversor.min.js'
+    filename: 'index.min.js'
   }
 };

@@ -1,6 +1,6 @@
 export default class Helpers {
     static convertStringToBinary(str) {
-        if (!str || typeof str !== 'string') {
+        if ((!str && str != "") || typeof str !== 'string') {
             throw new Error('param "str" is required, and should be a string');
         }
         const mapped = str.split("");
@@ -16,7 +16,7 @@ export default class Helpers {
     }
     
     static convertBinaryToText(str) {
-        if (!str || typeof str !== 'string') {
+        if ((!str && str != "") || typeof str !== 'string') {
             throw new Error('param "str" is required, and should be a string');
         }
         return str.split(" ").map(char => String.fromCharCode(parseInt(char, 2))).join("");

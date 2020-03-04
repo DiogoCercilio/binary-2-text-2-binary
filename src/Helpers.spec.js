@@ -1,7 +1,7 @@
 import Helpers from './Helpers'
 
 describe('Helpers Testing', ()=> {
-    describe('method:::convertNumberToBinary', ()=> {
+    describe('method:::convertStringToBinary', ()=> {
         it('should convertStringToBinary', ()=> {
             try { Helpers.convertStringToBinary(); expect(true).toBe(false); }
             catch(error) { expect(error.message).toBe('param "str" is required, and should be a string') }
@@ -12,9 +12,7 @@ describe('Helpers Testing', ()=> {
             try { Helpers.convertStringToBinary(undefined); expect(true).toBe(false); }
             catch(error) { expect(error.message).toBe('param "str" is required, and should be a string') }
 
-            try { Helpers.convertStringToBinary(''); expect(true).toBe(false); }
-            catch(error) { expect(error.message).toBe('param "str" is required, and should be a string') }
-
+            expect(Helpers.convertStringToBinary('')).toBe('');
             expect(Helpers.convertStringToBinary('👌')).toBe('1101100000111101 1101110001001100');
             expect(Helpers.convertStringToBinary('This test is working fine! ãáàõóòùúìíç')).toBe('1010100 1101000 1101001 1110011 100000 1110100 1100101 1110011 1110100 100000 1101001 1110011 100000 1110111 1101111 1110010 1101011 1101001 1101110 1100111 100000 1100110 1101001 1101110 1100101 100001 100000 11100011 11100001 11100000 11110101 11110011 11110010 11111001 11111010 11101100 11101101 11100111');
         })
@@ -78,11 +76,10 @@ describe('Helpers Testing', ()=> {
             try { Helpers.convertBinaryToText(true); expect(true).toBe(false); } 
             catch(error) { expect(error.message).toBe('param "str" is required, and should be a string') }
             
-            try { Helpers.convertBinaryToText(''); expect(true).toBe(false); } 
-            catch(error) { expect(error.message).toBe('param "str" is required, and should be a string') }
         })
-
+        
         it('should convertBinaryToText correctly', ()=> {
+            // expect(Helpers.convertBinaryToText("")).toBe("");
             const val = Helpers.convertBinaryToText('01010100 01101000 01101001 01110011 00100000 01110100 01100101 01110011 01110100 00100000 01101001 01110011 00100000 01110111 01101111 01110010 01101011 01101001 01101110 01100111 00100000 01100110 01101001 01101110 01100101 00100001 00100000 11100011 11100001 11100000 11110101 11110011 11110010 11111001 11111010 11101100 11101101 11100111');
             expect(val).toBe('This test is working fine! ãáàõóòùúìíç');
         });        
