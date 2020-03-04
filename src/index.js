@@ -52,7 +52,7 @@ Binary2Text2Binary.prototype.isInValidTrigger = function(e) {
  * @returns void
  */
 Binary2Text2Binary.prototype.convertBinaryToText = function(e) {
-    if (!Helpers.isValidBinary(e)) {
+    if (!Helpers.isValidBinary(e.target.value)) {
         this.error(this.config.invalid_binary || ERROR.INVALID_BINARY, e);
         return;
     }
