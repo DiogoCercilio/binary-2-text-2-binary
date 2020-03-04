@@ -1,6 +1,6 @@
 {
   "name": "@diogocercilio/binary-2-text-2-binary",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Binary / Text / Binary Converter",
   "main": "src/index.js",
   "scripts": {
